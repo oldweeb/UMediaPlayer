@@ -20,6 +20,7 @@ using UMediaPlayer.Models;
 using UMediaPlayer.Views;
 using Vlc.DotNet.Core;
 using Vlc.DotNet.Core.Interops;
+using Vlc.DotNet.Core.Interops.Signatures;
 using Application = System.Windows.Application;
 using MessageBox = System.Windows.MessageBox;
 using MouseEventArgs = System.Windows.Input.MouseEventArgs;
@@ -316,6 +317,14 @@ namespace UMediaPlayer
         private void HandleOpen(object parameter)
         {
             var openType = (OpenType)Enum.Parse(typeof(OpenType), (string)parameter);
+            Task.Run(() =>
+            {
+                while (MediaPlayer.State != MediaStates.Opening) ;
+                var stopwatch = Stopwatch.StartNew();
+                while (MediaPlayer.State == MediaStates.Opening) ;
+                stopwatch.Stop();
+                Debug.WriteLine("Took {0} to open", stopwatch.Elapsed);
+            });
             switch (openType)
             {
                 case OpenType.File:
