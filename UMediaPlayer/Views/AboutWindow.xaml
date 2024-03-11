@@ -1,0 +1,36 @@
+﻿<Window x:Class="UMediaPlayer.Views.AboutWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:UMediaPlayer.Views"
+        mc:Ignorable="d"
+        Title="About" Height="250" Width="600" Icon="{StaticResource PlayerIcon}" ResizeMode="NoResize" >
+    <Window.Resources>
+        <Image x:Key="LogoIcon" Source="../Resources/player.png" />
+    </Window.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0" Grid.RowSpan="4" Grid.Column="0">
+            <Image Source="../Resources/player.png" />
+        </Grid>
+        <Label Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" Padding="10" FontSize="30">UMedia Player</Label>
+        <Label Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Padding="10" FontSize="24">v 1.0.0</Label>
+        <Grid Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" VerticalAlignment="Center">
+            <TextBlock TextWrapping="Wrap" Padding="10 0">UMedia Player is a free and open source media player developed by student of Lviv Polytechnic National University</TextBlock>
+        </Grid>
+        <TextBlock VerticalAlignment="Center" Padding="10 0" Grid.ColumnSpan="2" Grid.Column="1" Grid.Row="4">
+            <Hyperlink NavigateUri="https://github.com/oldweeb/KPZ" RequestNavigate="NavigateToGitHub">Link to GitHub Repository</Hyperlink>
+        </TextBlock>
+    </Grid>
+</Window>

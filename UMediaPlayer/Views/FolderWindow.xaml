@@ -1,0 +1,53 @@
+﻿<Window x:Class="UMediaPlayer.Views.FolderWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:UMediaPlayer.Views"
+        mc:Ignorable="d"
+        Title="Videos" Height="Auto" MaxHeight="400" MinHeight="200" Width="400" ResizeMode="NoResize" Icon="{StaticResource PlayerIcon}">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <ListView x:Name="Videos" Grid.RowSpan="3" Margin="25 10 25 10" ItemsSource="{Binding Path=DataContext.State.VideoItems}" SelectedIndex="{Binding Path=DataContext.State.SelectedVideoIndex, Mode=TwoWay}">
+            <ListView.ItemContainerStyle>
+                <Style>
+                    <Setter Property="ListViewItem.MaxHeight" Value="50" />
+                    <Setter Property="ListViewItem.Height" Value="Auto" />
+                    <Setter Property="ListViewItem.MinHeight" Value="40" />
+                    <Style.Triggers>
+                        <Trigger Property="ListViewItem.IsSelected" Value="True">
+                            <Setter Property="ListViewItem.BorderBrush" Value="Blue" />
+                            <Setter Property="ListViewItem.BorderThickness" Value="3" />
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </ListView.ItemContainerStyle>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <Grid Width="120">
+                            <Image Source="{Binding Thumbnail}" />
+                        </Grid>
+                        <StackPanel Orientation="Vertical" Margin="10 0 0  0">
+                            <TextBlock Text="{Binding Title}" FontWeight="SemiBold" />
+                            <TextBlock Text="{Binding Duration}" />
+                        </StackPanel>
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <CheckBox VerticalAlignment="Center" Margin="25 0 0 0" FontSize="8" Grid.Row="3" IsChecked="{Binding Path=DataContext.State.AutoPlayNext, Mode=TwoWay}">
+            <CheckBox.Content>
+                <TextBlock Margin="0 3 3 3">Auto-Play Next</TextBlock>
+            </CheckBox.Content>
+            <CheckBox.LayoutTransform>
+                <ScaleTransform ScaleX="2" ScaleY="2"></ScaleTransform>
+            </CheckBox.LayoutTransform>
+        </CheckBox>
+    </Grid>
+</Window>

@@ -1,0 +1,27 @@
+﻿<Window x:Class="UMediaPlayer.Views.JumpWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:UMediaPlayer.Views"
+        xmlns:shared="http://schemas.syncfusion.com/wpf"
+        mc:Ignorable="d"
+        Title="Jump To..."  Height="150" Width="300" ResizeMode="NoResize" Padding="0">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="70"/>
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Grid Row="0">
+            <shared:TimeSpanEdit ShowArrowButtons="False" TextAlignment="Center" Margin="100 25 100 15" Format="hh:mm:ss" Value="{Binding Path=DataContext.State.JumpTo, Mode=TwoWay}" MaxValue="{Binding Path=DataContext.State.Length}" />
+        </Grid>
+        <Grid Grid.Row="1" >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Button Grid.Column="2" Margin="5 0 15 0" Height="25" FontWeight="SemiBold" BorderBrush="Transparent" IsDefault="True" Click="OkClick">OK</Button>
+        </Grid>
+    </Grid>
+</Window>

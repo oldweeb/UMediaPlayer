@@ -1,0 +1,94 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net47</TargetFramework>
+    <UseWPF>true</UseWPF>
+	  <LangVersion>10.0</LangVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Resources\checked.png" />
+    <None Remove="Resources\fast-forward.png" />
+    <None Remove="Resources\jump-backward.png" />
+    <None Remove="Resources\jump-forward.png" />
+    <None Remove="Resources\mute.png" />
+    <None Remove="Resources\open-file.png" />
+    <None Remove="Resources\pause.png" />
+    <None Remove="Resources\play.png" />
+    <None Remove="Resources\player.png" />
+    <None Remove="Resources\rabbit.png" />
+    <None Remove="Resources\rabbit2.png" />
+    <None Remove="Resources\rewind.png" />
+    <None Remove="Resources\speedometer.png" />
+    <None Remove="Resources\turtle.png" />
+    <None Remove="Resources\turtle2.png" />
+    <None Remove="Resources\volume-down.png" />
+    <None Remove="Resources\volume-up.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="NReco.VideoConverter" Version="1.2.1" />
+    <PackageReference Include="NReco.VideoInfo" Version="1.2.0" />
+    <PackageReference Include="Syncfusion.Shared.WPF" Version="24.2.9" />
+    <PackageReference Include="VideoLAN.LibVLC.Windows" Version="3.0.20" />
+    <PackageReference Include="Vlc.DotNet.Core" Version="3.1.0" />
+    <PackageReference Include="Vlc.DotNet.Wpf" Version="3.1.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resources\checked.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\fast-forward.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\jump-backward.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\jump-forward.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\mute.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\open-file.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\pause.png" />
+    <Resource Include="Resources\play.png" />
+    <Resource Include="Resources\player.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\rabbit.png" />
+    <Resource Include="Resources\rabbit2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\rewind.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\speedometer.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\turtle.png" />
+    <Resource Include="Resources\turtle2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\volume-down.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\volume-up.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="PresentationFramework.Aero">
+      <HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7\PresentationFramework.Aero.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Forms" Condition="'$(TargetFramework)' == 'net47'">
+      <HintPath>C:\Users\oldweeb\.nuget\packages\microsoft.netframework.referenceassemblies.net47\1.0.3\build\.NETFramework\v4.7\System.Windows.Forms.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>
